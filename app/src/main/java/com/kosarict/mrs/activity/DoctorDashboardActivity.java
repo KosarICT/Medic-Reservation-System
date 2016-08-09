@@ -23,6 +23,7 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class DoctorDashboardActivity extends AppCompatActivity {
     private TextView lblAppFarsiName;
+    private TextView lblPageTitle;
     private View pointerList;
     private View pointerSearch;
     private View pointerFolder;
@@ -56,6 +57,8 @@ public class DoctorDashboardActivity extends AppCompatActivity {
 
     private void initTextView() {
         lblAppFarsiName = (TextView) findViewById(R.id.lblAppFarsiName);
+        lblPageTitle = (TextView) findViewById(R.id.lblPageTitle);
+
         lblAppFarsiName.setText(Html.fromHtml(Constant.PERSIAN_APP_NAME));
     }
 
@@ -120,23 +123,23 @@ public class DoctorDashboardActivity extends AppCompatActivity {
 
         switch (command) {
             case Constant.LIST_COMMAND:
-                lblAppFarsiName.setText(R.string.title_activity_doctor_dashboard);
+                lblPageTitle.setText(R.string.title_activity_doctor_dashboard);
                 fragment = ListFragment.newInstance();
                 break;
             case Constant.SEARCH_COMMAND:
-                lblAppFarsiName.setText(R.string.empty_fragment);
+                lblPageTitle.setText(R.string.empty_fragment);
                 fragment = EmptyFragment.newInstance();
                 break;
             case Constant.FOLDER_COMMAND:
-                lblAppFarsiName.setText(R.string.empty_fragment);
+                lblPageTitle.setText(R.string.empty_fragment);
                 fragment = EmptyFragment.newInstance();
                 break;
             case Constant.SHARE_COMMAND:
-                lblAppFarsiName.setText(R.string.empty_fragment);
+                lblPageTitle.setText(R.string.empty_fragment);
                 fragment = EmptyFragment.newInstance();
                 break;
             case Constant.WORLD_COMMAND:
-                lblAppFarsiName.setText(R.string.empty_fragment);
+                lblPageTitle.setText(R.string.empty_fragment);
                 fragment = EmptyFragment.newInstance();
                 break;
         }
