@@ -32,7 +32,6 @@
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:layout_marginRight="@dimen/mainMargin"
-                    android:text="@string/title_activity_doctor_dashboard"
                     android:textColor="@color/whiteColor" />
 
                 <ImageView

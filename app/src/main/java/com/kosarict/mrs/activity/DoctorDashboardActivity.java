@@ -156,7 +156,7 @@ public class DoctorDashboardActivity extends AppCompatActivity {
     public void onBackPressed() {
         Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.container);
 
-        if (fragment != null && fragment instanceof ListFragment) {
+        if (fragment != null && fragment instanceof ListFragment || fragment instanceof EmptyFragment) {
             if (Constant.BACK_PRESSED + 2000 > System.currentTimeMillis()) {
                 finish();
             } else
