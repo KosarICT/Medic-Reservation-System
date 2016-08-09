@@ -1,0 +1,293 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/whiteColor"
+    tools:context="com.kosarict.mrs.fragment.RequestFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:paddingTop="10dp"
+        android:paddingBottom="5dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:layout_height="100dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:padding="10dp"
+            android:background="#e7e7e7">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#898989"
+                android:textSize="15sp"
+                android:lineSpacingMultiplier="1.2"
+                android:text="لطفا برای ثبت درخواست برای بیمارستان مورد نظر فرم زیر را با دقت
+پرکنید و بر روی گزینه ارسال اطلاعات کلیک کنید و از بخش در انتظار
+تایید ها منتظر پاسخ باشید"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/mainMargin"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:gravity="center_vertical|right"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="70"
+                android:gravity="center_vertical">
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:background="@mipmap/spinner_background"></Spinner>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="right|center_vertical"
+                android:layout_weight="30">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#535353"
+                    android:text="استان:"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#e1e1e1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:weightSum="100"
+            android:gravity="center_vertical|right">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="70"
+                android:gravity="center_vertical">
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:background="@mipmap/spinner_background"></Spinner>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="right|center_vertical"
+                android:layout_weight="30">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#535353"
+                    android:text="شهر:"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#e1e1e1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:weightSum="100"
+            android:gravity="center_vertical|right">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="70"
+                android:gravity="center_vertical">
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:background="@mipmap/spinner_background"></Spinner>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="right|center_vertical"
+                android:layout_weight="30">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#535353"
+                    android:text="نوع بیمارستان:"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#e1e1e1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:weightSum="100"
+            android:gravity="center_vertical|right">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="70"
+                android:gravity="center_vertical">
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:background="@mipmap/spinner_background"></Spinner>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="right|center_vertical"
+                android:layout_weight="30">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#535353"
+                    android:text="بیمارستان:"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#e1e1e1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:weightSum="100"
+            android:gravity="center_vertical|right">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="70"
+                android:gravity="center_vertical">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:singleLine="true"
+                    android:textSize="14sp"
+                    android:textColor="#989898"
+                    android:background="@drawable/edit_text_drawable"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="right|center_vertical"
+                android:layout_weight="30">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#535353"
+                    android:text="کد ملی:"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#e1e1e1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:weightSum="100"
+            android:layout_marginTop="@dimen/mainMargin"
+            android:gravity="center_vertical|right">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="50"
+                android:layout_marginRight="2dp"
+                android:gravity="center_vertical">
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="انصراف و بازگشت"
+                    android:textColor="@color/whiteColor"
+                    android:background="@drawable/btn_cancel_drawable"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="50"
+                android:layout_marginLeft="2dp"
+                android:gravity="center_vertical">
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="ثبت اطلاعات"
+                    android:textColor="@color/whiteColor"
+                    android:background="@drawable/btn_confirm_drawable" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
