@@ -5,5 +5,5 @@
     <string name="title_activity_doctor_dashboard">داشبورد دکتر</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="empty_fragment">درحال بروزرسانی</string>
 </resources>

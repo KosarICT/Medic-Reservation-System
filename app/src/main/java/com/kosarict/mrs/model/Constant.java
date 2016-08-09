@@ -14,4 +14,10 @@ public class Constant {
     public static String ENGLISH_APP_NAME = "<font color=#0f5b95>NOBAT</font><font color=#ffffff>DEHI</font>";
     public static String PERSIAN_APP_NAME = "<font color=#0f5b95>نوبت</font><font color=#ffffff> دهی</font>";
     public static String HELP = "<font size=20sp color=#f36857>راهنما</font><br/><font color=#344056>شما برای گام اول لازم است ثبت درخواست خود را برای بیمارستان مورد نظر ثبت نمایید و منتظر تایید توسط متصدیان بیمارستان باشید</font>";
+
+    public static final String LIST_COMMAND = "LIST";
+    public static final String SEARCH_COMMAND = "SEARCH";
+    public static final String FOLDER_COMMAND = "FOLDER";
+    public static final String SHARE_COMMAND = "SHARE";
+    public static final String WORLD_COMMAND = "WORLD";
 }

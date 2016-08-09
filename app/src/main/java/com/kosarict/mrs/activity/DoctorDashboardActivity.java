@@ -15,18 +15,19 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.kosarict.mrs.R;
+import com.kosarict.mrs.fragment.EmptyFragment;
 import com.kosarict.mrs.fragment.ListFragment;
 import com.kosarict.mrs.model.Constant;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class DoctorDashboardActivity extends AppCompatActivity {
+    private TextView lblAppFarsiName;
     private View pointerList;
     private View pointerSearch;
     private View pointerFolder;
     private View pointerShare;
     private View pointerWorld;
-
 
 
     @Override
@@ -38,7 +39,7 @@ public class DoctorDashboardActivity extends AppCompatActivity {
 
         initTextView();
         initPointerView();
-        setView();
+        setView(Constant.LIST_COMMAND, true);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Window window = getWindow();
@@ -53,12 +54,12 @@ public class DoctorDashboardActivity extends AppCompatActivity {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
     }
 
-    private void initTextView(){
-        TextView lblAppFarsiName = (TextView) findViewById(R.id.lblAppFarsiName);
+    private void initTextView() {
+        lblAppFarsiName = (TextView) findViewById(R.id.lblAppFarsiName);
         lblAppFarsiName.setText(Html.fromHtml(Constant.PERSIAN_APP_NAME));
     }
 
-    private void initPointerView(){
+    private void initPointerView() {
         pointerList = (View) findViewById(R.id.pointerList);
         pointerSearch = (View) findViewById(R.id.pointerSearch);
         pointerFolder = (View) findViewById(R.id.pointerFolder);
@@ -66,14 +67,15 @@ public class DoctorDashboardActivity extends AppCompatActivity {
         pointerWorld = (View) findViewById(R.id.pointerWorld);
     }
 
-    public void btnDoctorDashboardNavigationClick(View view){
-        switch (view.getId()){
+    public void btnDoctorDashboardNavigationClick(View view) {
+        switch (view.getId()) {
             case R.id.rlList:
                 pointerList.setVisibility(View.VISIBLE);
                 pointerSearch.setVisibility(View.INVISIBLE);
                 pointerFolder.setVisibility(View.INVISIBLE);
                 pointerShare.setVisibility(View.INVISIBLE);
                 pointerWorld.setVisibility(View.INVISIBLE);
+                setView(Constant.LIST_COMMAND, false);
                 break;
             case R.id.rlSearch:
                 pointerList.setVisibility(View.INVISIBLE);
@@ -81,6 +83,7 @@ public class DoctorDashboardActivity extends AppCompatActivity {
                 pointerFolder.setVisibility(View.INVISIBLE);
                 pointerShare.setVisibility(View.INVISIBLE);
                 pointerWorld.setVisibility(View.INVISIBLE);
+                setView(Constant.SEARCH_COMMAND, false);
                 break;
             case R.id.rlFolder:
                 pointerList.setVisibility(View.INVISIBLE);
@@ -88,6 +91,7 @@ public class DoctorDashboardActivity extends AppCompatActivity {
                 pointerFolder.setVisibility(View.VISIBLE);
                 pointerShare.setVisibility(View.INVISIBLE);
                 pointerWorld.setVisibility(View.INVISIBLE);
+                setView(Constant.FOLDER_COMMAND, false);
                 break;
             case R.id.rlShare:
                 pointerList.setVisibility(View.INVISIBLE);
@@ -95,6 +99,7 @@ public class DoctorDashboardActivity extends AppCompatActivity {
                 pointerFolder.setVisibility(View.INVISIBLE);
                 pointerShare.setVisibility(View.VISIBLE);
                 pointerWorld.setVisibility(View.INVISIBLE);
+                setView(Constant.SHARE_COMMAND, false);
                 break;
             case R.id.rlWorld:
                 pointerList.setVisibility(View.INVISIBLE);
@@ -102,16 +107,45 @@ public class DoctorDashboardActivity extends AppCompatActivity {
                 pointerFolder.setVisibility(View.INVISIBLE);
                 pointerShare.setVisibility(View.INVISIBLE);
                 pointerWorld.setVisibility(View.VISIBLE);
+                setView(Constant.WORLD_COMMAND, false);
                 break;
         }
     }
 
-    private void setView(){
-        Fragment fragment = ListFragment.newInstance();
+    private void setView(String command, boolean isFirstView) {
+        Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.container);
 
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.container, fragment, "ListFragment")
-                .addToBackStack("ListFragment").commit();
+        if(!isFirstView)
+            getSupportFragmentManager().beginTransaction().remove(fragment).commit();
+
+        switch (command) {
+            case Constant.LIST_COMMAND:
+                lblAppFarsiName.setText(R.string.title_activity_doctor_dashboard);
+                fragment = ListFragment.newInstance();
+                break;
+            case Constant.SEARCH_COMMAND:
+                lblAppFarsiName.setText(R.string.empty_fragment);
+                fragment = EmptyFragment.newInstance();
+                break;
+            case Constant.FOLDER_COMMAND:
+                lblAppFarsiName.setText(R.string.empty_fragment);
+                fragment = EmptyFragment.newInstance();
+                break;
+            case Constant.SHARE_COMMAND:
+                lblAppFarsiName.setText(R.string.empty_fragment);
+                fragment = EmptyFragment.newInstance();
+                break;
+            case Constant.WORLD_COMMAND:
+                lblAppFarsiName.setText(R.string.empty_fragment);
+                fragment = EmptyFragment.newInstance();
+                break;
+        }
+
+        if (fragment != null) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.container, fragment, "ListFragment")
+                    .addToBackStack("ListFragment").commit();
+        }
     }
 
 

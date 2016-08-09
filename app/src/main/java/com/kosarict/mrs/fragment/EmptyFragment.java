@@ -9,17 +9,13 @@ import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import com.kosarict.mrs.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link EmptyFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link EmptyFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import pl.droidsonroids.gif.GifImageView;
+
+
 public class EmptyFragment extends Fragment {
     private View layoutView;
     private FragmentActivity context;
@@ -46,6 +42,17 @@ public class EmptyFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         layoutView =  inflater.inflate(R.layout.fragment_empty, container, false);
+
+        initGIFLayout();
+
         return layoutView;
+    }
+
+    private void initGIFLayout() {
+        GifImageView gib = new GifImageView(context);
+        gib.setImageResource(R.mipmap.no_record);
+
+        LinearLayout llLogo = (LinearLayout) layoutView.findViewById(R.id.llNotFound);
+        llLogo.addView(gib);
     }
 }
