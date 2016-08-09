@@ -8,9 +8,11 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.TextView;
 
 import com.kosarict.mrs.R;
 import com.kosarict.mrs.model.Constant;
@@ -25,10 +27,12 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
+        initTextView();
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                PublicMethods.navToPage(SplashActivity.this, MainActivity.class);
+                PublicMethods.navToPage(SplashActivity.this, DoctorDashboardActivity.class);
                 finish();
             }
         }, Constant.SPLASH_TIME_OUT);
@@ -43,5 +47,10 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+    }
+
+    private void initTextView(){
+        TextView lblAppEnglishName = (TextView) findViewById(R.id.lblAppEnglishName);
+        lblAppEnglishName.setText(Html.fromHtml(Constant.ENGLISH_APP_NAME));
     }
 }

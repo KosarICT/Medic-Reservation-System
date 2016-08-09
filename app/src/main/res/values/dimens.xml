@@ -5,4 +5,8 @@
     <dimen name="fab_margin">16dp</dimen>
 
     <dimen name="mainMargin">10dp</dimen>
+    <dimen name="xxxMargin">10dp</dimen>
+    <dimen name="xxMargin">10dp</dimen>
+    <dimen name="xMargin">10dp</dimen>
+    <dimen name="mediumMargin">30dp</dimen>
 </resources>

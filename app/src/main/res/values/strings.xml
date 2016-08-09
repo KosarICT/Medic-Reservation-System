@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">MRS</string>
-    <string name="action_settings">Settings</string>
+    <string name="lbl_App_English_Name"></string>
     <string name="title_activity_main"></string>
+    <string name="title_activity_doctor_dashboard">داشبورد دکتر</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
