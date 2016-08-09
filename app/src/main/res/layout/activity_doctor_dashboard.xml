@@ -84,9 +84,12 @@
             android:weightSum="100">
 
             <RelativeLayout
+                android:id="@+id/rlWorld"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="20">
+                android:layout_weight="20"
+                android:clickable="true"
+                android:onClick="btnDoctorDashboardNavigationClick">
 
                 <View
                     android:id="@+id/pointerWorld"
@@ -105,9 +108,12 @@
             </RelativeLayout>
 
             <RelativeLayout
+                android:id="@+id/rlShare"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="20">
+                android:layout_weight="20"
+                android:clickable="true"
+                android:onClick="btnDoctorDashboardNavigationClick">
 
                 <View
                     android:id="@+id/pointerShare"
@@ -126,12 +132,15 @@
             </RelativeLayout>
 
             <RelativeLayout
+                android:id="@+id/rlFolder"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="20">
+                android:layout_weight="20"
+                android:clickable="true"
+                android:onClick="btnDoctorDashboardNavigationClick">
 
                 <View
-                    android:id="@+id/pointeFolder"
+                    android:id="@+id/pointerFolder"
                     android:layout_width="match_parent"
                     android:layout_height="3dp"
                     android:layout_centerHorizontal="true"
@@ -147,9 +156,12 @@
             </RelativeLayout>
 
             <RelativeLayout
+                android:id="@+id/rlSearch"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="20">
+                android:layout_weight="20"
+                android:clickable="true"
+                android:onClick="btnDoctorDashboardNavigationClick">
 
                 <View
                     android:id="@+id/pointerSearch"
@@ -168,9 +180,12 @@
             </RelativeLayout>
 
             <RelativeLayout
+                android:id="@+id/rlList"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="20"
+                android:clickable="true"
+                android:onClick="btnDoctorDashboardNavigationClick"
                 android:orientation="vertical">
 
                 <View

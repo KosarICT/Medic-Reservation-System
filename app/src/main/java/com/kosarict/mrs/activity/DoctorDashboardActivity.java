@@ -7,8 +7,10 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,6 +21,13 @@ import com.kosarict.mrs.model.Constant;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class DoctorDashboardActivity extends AppCompatActivity {
+    private View pointerList;
+    private View pointerSearch;
+    private View pointerFolder;
+    private View pointerShare;
+    private View pointerWorld;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +37,7 @@ public class DoctorDashboardActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         initTextView();
+        initPointerView();
         setView();
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -46,6 +56,54 @@ public class DoctorDashboardActivity extends AppCompatActivity {
     private void initTextView(){
         TextView lblAppFarsiName = (TextView) findViewById(R.id.lblAppFarsiName);
         lblAppFarsiName.setText(Html.fromHtml(Constant.PERSIAN_APP_NAME));
+    }
+
+    private void initPointerView(){
+        pointerList = (View) findViewById(R.id.pointerList);
+        pointerSearch = (View) findViewById(R.id.pointerSearch);
+        pointerFolder = (View) findViewById(R.id.pointerFolder);
+        pointerShare = (View) findViewById(R.id.pointerShare);
+        pointerWorld = (View) findViewById(R.id.pointerWorld);
+    }
+
+    public void btnDoctorDashboardNavigationClick(View view){
+        switch (view.getId()){
+            case R.id.rlList:
+                pointerList.setVisibility(View.VISIBLE);
+                pointerSearch.setVisibility(View.INVISIBLE);
+                pointerFolder.setVisibility(View.INVISIBLE);
+                pointerShare.setVisibility(View.INVISIBLE);
+                pointerWorld.setVisibility(View.INVISIBLE);
+                break;
+            case R.id.rlSearch:
+                pointerList.setVisibility(View.INVISIBLE);
+                pointerSearch.setVisibility(View.VISIBLE);
+                pointerFolder.setVisibility(View.INVISIBLE);
+                pointerShare.setVisibility(View.INVISIBLE);
+                pointerWorld.setVisibility(View.INVISIBLE);
+                break;
+            case R.id.rlFolder:
+                pointerList.setVisibility(View.INVISIBLE);
+                pointerSearch.setVisibility(View.INVISIBLE);
+                pointerFolder.setVisibility(View.VISIBLE);
+                pointerShare.setVisibility(View.INVISIBLE);
+                pointerWorld.setVisibility(View.INVISIBLE);
+                break;
+            case R.id.rlShare:
+                pointerList.setVisibility(View.INVISIBLE);
+                pointerSearch.setVisibility(View.INVISIBLE);
+                pointerFolder.setVisibility(View.INVISIBLE);
+                pointerShare.setVisibility(View.VISIBLE);
+                pointerWorld.setVisibility(View.INVISIBLE);
+                break;
+            case R.id.rlWorld:
+                pointerList.setVisibility(View.INVISIBLE);
+                pointerSearch.setVisibility(View.INVISIBLE);
+                pointerFolder.setVisibility(View.INVISIBLE);
+                pointerShare.setVisibility(View.INVISIBLE);
+                pointerWorld.setVisibility(View.VISIBLE);
+                break;
+        }
     }
 
     private void setView(){
