@@ -15,9 +15,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.kosarict.mrs.R;
+import com.kosarict.mrs.fragment.DashboardFragment;
 import com.kosarict.mrs.fragment.EmptyFragment;
 import com.kosarict.mrs.fragment.ListFragment;
-import com.kosarict.mrs.fragment.RequestFragment;
+import com.kosarict.mrs.fragment.RegisterFragment;
 import com.kosarict.mrs.model.Constant;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
@@ -129,11 +130,11 @@ public class DoctorDashboardActivity extends AppCompatActivity {
                 break;
             case Constant.SEARCH_COMMAND:
                 lblPageTitle.setText(R.string.empty_fragment);
-                fragment = RequestFragment.newInstance();
+                fragment = RegisterFragment.newInstance();
                 break;
             case Constant.FOLDER_COMMAND:
                 lblPageTitle.setText(R.string.empty_fragment);
-                fragment = EmptyFragment.newInstance();
+                fragment = DashboardFragment.newInstance();
                 break;
             case Constant.SHARE_COMMAND:
                 lblPageTitle.setText(R.string.empty_fragment);
