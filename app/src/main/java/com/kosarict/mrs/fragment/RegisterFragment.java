@@ -1,8 +1,6 @@
 package com.kosarict.mrs.fragment;
 
 import android.app.Activity;
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -12,17 +10,17 @@ import android.view.ViewGroup;
 
 import com.kosarict.mrs.R;
 
-public class RequestFragment extends Fragment {
+public class RegisterFragment extends Fragment {
     private View layoutView;
     private FragmentActivity context;
 
-    public RequestFragment() {
+    public RegisterFragment() {
     }
 
 
     // TODO: Rename and change types and number of parameters
-    public static RequestFragment newInstance() {
-        return new RequestFragment();
+    public static RegisterFragment newInstance() {
+        return new RegisterFragment();
     }
 
     @Override
@@ -39,7 +37,7 @@ public class RequestFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        layoutView =  inflater.inflate(R.layout.fragment_request, container, false);
+        layoutView =  inflater.inflate(R.layout.fragment_register, container, false);
         return layoutView;
     }
 }
