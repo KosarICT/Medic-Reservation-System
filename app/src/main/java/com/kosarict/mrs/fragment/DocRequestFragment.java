@@ -1,8 +1,6 @@
 package com.kosarict.mrs.fragment;
 
 import android.app.Activity;
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -12,17 +10,17 @@ import android.view.ViewGroup;
 
 import com.kosarict.mrs.R;
 
-public class RequestFragment extends Fragment {
+public class DocRequestFragment extends Fragment {
     private View layoutView;
     private FragmentActivity context;
 
 
-    public RequestFragment() {
+    public DocRequestFragment() {
     }
 
 
-    public static RequestFragment newInstance() {
-        return new RequestFragment();
+    public static DocRequestFragment newInstance() {
+        return new DocRequestFragment();
     }
 
     @Override
@@ -39,7 +37,7 @@ public class RequestFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        layoutView = inflater.inflate(R.layout.fragment_request, container, false);
+        layoutView = inflater.inflate(R.layout.fragment_docrequest, container, false);
         return layoutView;
     }
 }
