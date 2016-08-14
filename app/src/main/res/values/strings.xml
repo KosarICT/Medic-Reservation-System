@@ -10,4 +10,6 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="register_fragment_title"> ثبت درخواست برای بیمارستان</string>
     <string name="my_hospital_fragment_title">بیمارستان های من</string>
+    <string name="doc_request_fragment_title">درج نوبت برای بیمارستان</string>
+    <string name="get_turn_patient_fragment_title">ثبت نوبت برای بیمار</string>
 </resources>

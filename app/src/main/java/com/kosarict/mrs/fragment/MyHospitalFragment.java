@@ -9,6 +9,7 @@ import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -42,6 +43,7 @@ public class MyHospitalFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
     }
 
     @Override
@@ -58,11 +60,26 @@ public class MyHospitalFragment extends Fragment {
         ListView lstMyHospital = (ListView) layoutView.findViewById(R.id.lstMyHospital);
 
         lstMyHospital.setAdapter(new listViewDataAdapter());
+        lstMyHospital.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                hospitalModel hospitalModel = hospitalList.get(position);
+
+                Fragment fragment = context.getSupportFragmentManager().findFragmentById(R.id.container);
+                context.getSupportFragmentManager().beginTransaction().remove(fragment).commit();
+
+                fragment = DashboardFragment.newInstance(hospitalModel.getTitle());
+
+                context.getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.container, fragment, "docRequestFragment")
+                        .addToBackStack("docRequestFragment").commit();
+            }
+        });
     }
 
     private void initListViewDate() {
-        hospitalModel hospitalModel1 = new hospitalModel("بیمارستان آریا اهواز", "بیمارستان فوق تخصصی قلب");
-        hospitalModel hospitalModel2 = new hospitalModel("بیمارستان خرمشهر", "بیمارستان تخصصی چشم");
+        hospitalModel hospitalModel1 = new hospitalModel(1, "بیمارستان آریا اهواز", "بیمارستان فوق تخصصی قلب");
+        hospitalModel hospitalModel2 = new hospitalModel(2, "بیمارستان خرمشهر", "بیمارستان تخصصی چشم");
 
         hospitalList.add(hospitalModel1);
         hospitalList.add(hospitalModel2);
@@ -77,12 +94,12 @@ public class MyHospitalFragment extends Fragment {
 
         @Override
         public hospitalModel getItem(int position) {
-            return hospitalList.get(0);
+            return hospitalList.get(position);
         }
 
         @Override
         public long getItemId(int position) {
-            return 0;
+            return hospitalList.get(position).getId();
         }
 
         @Override
@@ -99,8 +116,8 @@ public class MyHospitalFragment extends Fragment {
             TextView lblMyHospitalTitle = (TextView) view.findViewById(R.id.lblMyHospitalTitle);
             TextView lblMyHospitalDescription = (TextView) view.findViewById(R.id.lblMyHospitalDescription);
 
-            lblMyHospitalTitle.setText(hospitalList.get(0).getTitle());
-            lblMyHospitalDescription.setText(hospitalList.get(0).getDescription());
+            lblMyHospitalTitle.setText(hospitalList.get(position).getTitle());
+            lblMyHospitalDescription.setText(hospitalList.get(position).getDescription());
 
             return view;
         }

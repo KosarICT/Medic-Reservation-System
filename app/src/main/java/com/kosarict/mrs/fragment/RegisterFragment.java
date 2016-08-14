@@ -155,9 +155,9 @@ public class RegisterFragment extends Fragment {
         hospitalList2.add("بیمارستان شهید مدرس");
         hospitalList3.add("بیمارستان امام رضا");
 
-        spinnerModel stateModel1 = new spinnerModel(1, "اهواز", cityList1, hospitalList1);
+        spinnerModel stateModel1 = new spinnerModel(1, "خوزستان", cityList1, hospitalList1);
         spinnerModel stateModel2 = new spinnerModel(2, "تهران", cityList2, hospitalList2);
-        spinnerModel stateModel3 = new spinnerModel(3, "مشهد", cityList3, hospitalList3);
+        spinnerModel stateModel3 = new spinnerModel(3, "خراسان رضوی", cityList3, hospitalList3);
 
         stateModel.add(stateModel1);
         stateModel.add(stateModel2);

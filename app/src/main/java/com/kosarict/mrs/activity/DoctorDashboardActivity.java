@@ -136,11 +136,11 @@ public class DoctorDashboardActivity extends AppCompatActivity {
                 break;
             case Constant.FOLDER_COMMAND:
                 lblPageTitle.setText(R.string.empty_fragment);
-                fragment = DashboardFragment.newInstance();
+                fragment = EmptyFragment.newInstance();
                 break;
             case Constant.SHARE_COMMAND:
                 lblPageTitle.setText(R.string.empty_fragment);
-                fragment = DocRequestFragment.newInstance();
+                fragment = EmptyFragment.newInstance();
                 break;
             case Constant.WORLD_COMMAND:
                 lblPageTitle.setText(R.string.empty_fragment);

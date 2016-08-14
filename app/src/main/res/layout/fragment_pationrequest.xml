@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/whiteColor"
-    tools:context="com.kosarict.mrs.fragment.PationRequestFragment">
+    tools:context="com.kosarict.mrs.fragment.PatientRequestFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,24 +24,26 @@
                 android:layout_weight="70"
                 android:gravity="center_vertical">
 
-                <Spinner
+                <Button
+                    android:id="@+id/btnPationFromDate"
                     android:layout_width="match_parent"
-                    android:layout_height="45dp"
-                    android:background="@mipmap/spinner_background">
-
-                </Spinner>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="30"
-                android:gravity="center_vertical|right">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="55dp"
+                    android:background="@drawable/button_selector"
                     android:text="تاریخ نوبت"
+                    android:textColor="@color/whiteColor" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="30"
+                android:gravity="center_vertical|right">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="تاریخ نوبت:"
                     android:textColor="#535353" />
             </LinearLayout>
 
@@ -65,24 +67,26 @@
                 android:layout_weight="70"
                 android:gravity="center_vertical">
 
-                <Spinner
+                <Button
+                    android:id="@+id/btnPationTime"
                     android:layout_width="match_parent"
-                    android:layout_height="45dp"
-                    android:background="@mipmap/spinner_background">
-
-                </Spinner>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="30"
-                android:gravity="center_vertical|right">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="55dp"
+                    android:background="@drawable/button_selector"
                     android:text="ساعت"
+                    android:textColor="@color/whiteColor" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="30"
+                android:gravity="center_vertical|right">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ساعت:"
                     android:textColor="#535353" />
             </LinearLayout>
 
@@ -106,12 +110,18 @@
                 android:layout_weight="70"
                 android:gravity="center_vertical">
 
-                <Spinner
+                <EditText
+                    android:id="@+id/txtNationalCode"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
-                    android:background="@mipmap/spinner_background">
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:singleLine="true"
+                    android:textSize="14sp"
+                    android:textColor="#989898"
+                    android:textAlignment="center"
+                    android:background="@drawable/edit_text_drawable"/>
 
-                </Spinner>
             </LinearLayout>
 
             <LinearLayout
@@ -123,7 +133,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="کد ملی بیمار"
+                    android:text="کد ملی بیمار:"
                     android:textColor="#535353" />
             </LinearLayout>
 
@@ -150,6 +160,7 @@
                 android:gravity="center_vertical|right">
 
                 <Button
+                    android:id="@+id/btnPatientRequestCancel"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/btn_cancel_drawable"
@@ -166,6 +177,7 @@
                 android:gravity="center_vertical">
 
                 <Button
+                    android:id="@+id/btnPatientRequestSubmit"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/btn_confirm_drawable"
