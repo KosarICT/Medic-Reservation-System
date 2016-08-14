@@ -8,5 +8,6 @@
     <string name="empty_fragment">درحال بروزرسانی</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="register_fragment_title"> ثبت درخواست برای بیمارستان</string>
+    <string name="my_hospital_fragment_title">بیمارستان های من</string>
 </resources>

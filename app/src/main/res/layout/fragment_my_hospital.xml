@@ -5,8 +5,10 @@
     tools:context="com.kosarict.mrs.fragment.MyHospitalFragment">
 
     <ListView
+        android:id="@+id/lstMyHospital"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/lst_my_hospital_item_layout"></ListView>
+        android:divider="@null"
+        tools:listitem="@layout/lst_my_hospital_item_layout"/>
 
 </FrameLayout>

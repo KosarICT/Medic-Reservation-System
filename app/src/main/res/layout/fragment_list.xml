@@ -58,8 +58,10 @@
         android:orientation="vertical">
 
         <LinearLayout
+            android:id="@+id/llSubmitRequestForHospital"
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:clickable="true"
             android:gravity="center_vertical|right">
 
             <TextView
@@ -108,8 +110,10 @@
             android:background="#e0e0e0" />
 
         <LinearLayout
+            android:id="@+id/llMyHospital"
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:clickable="true"
             android:gravity="center_vertical|right">
 
             <TextView

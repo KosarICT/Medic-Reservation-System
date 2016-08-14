@@ -30,17 +30,17 @@
                 android:id="@+id/lblMyHospitalTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:text="بیمارستان آریا اهواز"/>
+                android:layout_centerVertical="true"/>
 
             <TextView
+                android:id="@+id/lblMyHospitalDescription"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="بیمارستان فوق تخصصی قلب" />
+                android:layout_height="wrap_content"/>
 
         </LinearLayout>
 
         <ImageView
+            android:layout_marginLeft="@dimen/mainMargin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"

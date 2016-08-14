@@ -10,9 +10,12 @@ import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.kosarict.mrs.R;
+import com.kosarict.mrs.activity.DoctorDashboardActivity;
+import com.kosarict.mrs.activity.MainActivity;
 import com.kosarict.mrs.model.Constant;
 
 public class ListFragment extends Fragment {
@@ -38,16 +41,57 @@ public class ListFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         layoutView = inflater.inflate(R.layout.fragment_list, container, false);
 
         initTextView();
+        initLinearLayout();
 
         return layoutView;
     }
 
-    private void initTextView(){
+    private void initTextView() {
         TextView lblListFragmentHelp = (TextView) layoutView.findViewById(R.id.lblListFragmentHelp);
         lblListFragmentHelp.setText(Html.fromHtml(Constant.HELP));
+    }
+
+    private void initLinearLayout() {
+        LinearLayout llSubmitRequestForHospital = (LinearLayout) layoutView.findViewById(R.id.llSubmitRequestForHospital);
+        LinearLayout llMyHospital = (LinearLayout) layoutView.findViewById(R.id.llMyHospital);
+
+        llSubmitRequestForHospital.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setView(v.getId());
+            }
+        });
+
+        llMyHospital.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setView(v.getId());
+            }
+        });
+    }
+
+    private void setView(int id) {
+        Fragment fragment = context.getSupportFragmentManager().findFragmentById(R.id.container);
+        context.getSupportFragmentManager().beginTransaction().remove(fragment).commit();
+
+        switch (id) {
+            case R.id.llSubmitRequestForHospital:
+                DoctorDashboardActivity.lblPageTitle.setText(R.string.register_fragment_title);
+                fragment = RegisterFragment.newInstance();
+                break;
+            case R.id.llMyHospital:
+                DoctorDashboardActivity.lblPageTitle.setText(R.string.title_activity_doctor_dashboard);
+                fragment = MyHospitalFragment.newInstance();
+        }
+
+        if (fragment != null) {
+            context.getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.container, fragment, "ListFragment")
+                    .addToBackStack("ListFragment").commit();
+        }
     }
 }

@@ -20,4 +20,5 @@ public class Constant {
     public static final String FOLDER_COMMAND = "FOLDER";
     public static final String SHARE_COMMAND = "SHARE";
     public static final String WORLD_COMMAND = "WORLD";
+    public static final String MY_HOSPITAL = "MY_HOSPITAL";
 }

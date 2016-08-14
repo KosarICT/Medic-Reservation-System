@@ -16,8 +16,10 @@ import android.widget.Toast;
 
 import com.kosarict.mrs.R;
 import com.kosarict.mrs.fragment.DashboardFragment;
+import com.kosarict.mrs.fragment.DocRequestFragment;
 import com.kosarict.mrs.fragment.EmptyFragment;
 import com.kosarict.mrs.fragment.ListFragment;
+import com.kosarict.mrs.fragment.MyHospitalFragment;
 import com.kosarict.mrs.fragment.RegisterFragment;
 import com.kosarict.mrs.model.Constant;
 
@@ -25,7 +27,7 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class DoctorDashboardActivity extends AppCompatActivity {
     private TextView lblAppFarsiName;
-    private TextView lblPageTitle;
+    public static TextView lblPageTitle;
     private View pointerList;
     private View pointerSearch;
     private View pointerFolder;
@@ -120,7 +122,7 @@ public class DoctorDashboardActivity extends AppCompatActivity {
     private void setView(String command, boolean isFirstView) {
         Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.container);
 
-        if(!isFirstView)
+        if (!isFirstView)
             getSupportFragmentManager().beginTransaction().remove(fragment).commit();
 
         switch (command) {
@@ -138,7 +140,7 @@ public class DoctorDashboardActivity extends AppCompatActivity {
                 break;
             case Constant.SHARE_COMMAND:
                 lblPageTitle.setText(R.string.empty_fragment);
-                fragment = EmptyFragment.newInstance();
+                fragment = DocRequestFragment.newInstance();
                 break;
             case Constant.WORLD_COMMAND:
                 lblPageTitle.setText(R.string.empty_fragment);
@@ -164,6 +166,10 @@ public class DoctorDashboardActivity extends AppCompatActivity {
             } else
                 Toast.makeText(getBaseContext(), "برای خروج کلید بازگشت را مجددا فشار دهید", Toast.LENGTH_SHORT).show();
             Constant.BACK_PRESSED = System.currentTimeMillis();
+        } else if (fragment != null && fragment instanceof RegisterFragment) {
+            setView(Constant.LIST_COMMAND, false);
+        } else if(fragment != null && fragment instanceof MyHospitalFragment){
+            setView(Constant.LIST_COMMAND, false);
         } else {
             super.onBackPressed();
         }
