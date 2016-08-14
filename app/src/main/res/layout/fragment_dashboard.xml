@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/whiteColor"
     tools:context="com.kosarict.mrs.fragment.DashboardFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -13,8 +14,10 @@
         android:orientation="vertical">
 
         <LinearLayout
+            android:id="@+id/llInsertTurnDoctor"
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:clickable="true"
             android:gravity="center_vertical|right">
 
             <TextView
@@ -38,8 +41,10 @@
             android:background="#e0e0e0" />
 
         <LinearLayout
+            android:id="@+id/llViewRegisteredTurns"
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:clickable="true"
             android:gravity="center_vertical|right">
 
             <TextView
@@ -63,8 +68,10 @@
             android:background="#e0e0e0" />
 
         <LinearLayout
+            android:id="@+id/llCanceledTurns"
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:clickable="true"
             android:gravity="center_vertical|right">
 
             <TextView
@@ -88,8 +95,10 @@
             android:background="#e0e0e0" />
 
         <LinearLayout
+            android:id="@+id/llGetTurnPatient"
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:clickable="true"
             android:gravity="center_vertical|right">
 
             <TextView
