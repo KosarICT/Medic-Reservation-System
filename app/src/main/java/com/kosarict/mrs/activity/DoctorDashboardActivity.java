@@ -15,11 +15,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.kosarict.mrs.R;
+import com.kosarict.mrs.fragment.CallingTurnFragment;
 import com.kosarict.mrs.fragment.DashboardFragment;
 import com.kosarict.mrs.fragment.DocRequestFragment;
 import com.kosarict.mrs.fragment.EmptyFragment;
 import com.kosarict.mrs.fragment.ListFragment;
 import com.kosarict.mrs.fragment.MyHospitalFragment;
+import com.kosarict.mrs.fragment.PatientRequestFragment;
 import com.kosarict.mrs.fragment.RegisterFragment;
 import com.kosarict.mrs.model.Constant;
 
@@ -132,7 +134,7 @@ public class DoctorDashboardActivity extends AppCompatActivity {
                 break;
             case Constant.SEARCH_COMMAND:
                 lblPageTitle.setText(R.string.empty_fragment);
-                fragment = RegisterFragment.newInstance();
+                fragment = EmptyFragment.newInstance();
                 break;
             case Constant.FOLDER_COMMAND:
                 lblPageTitle.setText(R.string.empty_fragment);
@@ -145,6 +147,15 @@ public class DoctorDashboardActivity extends AppCompatActivity {
             case Constant.WORLD_COMMAND:
                 lblPageTitle.setText(R.string.empty_fragment);
                 fragment = EmptyFragment.newInstance();
+                break;
+            case Constant.DASHBOARD_FRAGMENT:
+                fragment = DashboardFragment.newInstance(PatientRequestFragment.selectedHospitalName);
+                break;
+            case Constant.MY_HOSPITAL:
+                fragment = MyHospitalFragment.newInstance();
+                break;
+            case Constant.DOC_REQUEST_FRAGMENT:
+                fragment = DashboardFragment.newInstance(DocRequestFragment.selectedHospitalName);
                 break;
         }
 
@@ -169,6 +180,14 @@ public class DoctorDashboardActivity extends AppCompatActivity {
         } else if (fragment != null && fragment instanceof RegisterFragment) {
             setView(Constant.LIST_COMMAND, false);
         } else if(fragment != null && fragment instanceof MyHospitalFragment){
+            setView(Constant.LIST_COMMAND, false);
+        } else if(fragment != null && fragment instanceof DashboardFragment){
+            setView(Constant.MY_HOSPITAL, false);
+        } else if(fragment != null && fragment instanceof PatientRequestFragment){
+            setView(Constant.DASHBOARD_FRAGMENT, false);
+        } else if(fragment != null && fragment instanceof DocRequestFragment){
+            setView(Constant.DOC_REQUEST_FRAGMENT, false);
+        } else if(fragment != null && fragment instanceof CallingTurnFragment){
             setView(Constant.LIST_COMMAND, false);
         } else {
             super.onBackPressed();

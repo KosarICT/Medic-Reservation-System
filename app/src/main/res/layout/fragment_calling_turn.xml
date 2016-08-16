@@ -1,0 +1,225 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/whiteColor"
+    android:orientation="vertical"
+    tools:context="com.kosarict.mrs.fragment.CallingTurnFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/mainMargin"
+        android:layout_height="60dp">
+
+        <ImageView
+            android:id="@+id/imgCallingTurnDate"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:src="@mipmap/ic_date" />
+
+        <TextView
+            android:id="@+id/lblCallingTurnToday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/imgCallingTurnDate"
+            android:layout_marginRight="@dimen/mainMargin"
+            android:text="امروز"/>
+
+        <TextView
+            android:id="@+id/lblCallingTurnCurrentDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/lblCallingTurnToday"
+            android:layout_marginRight="50dp"
+            android:text="1395/05/26"/>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="@dimen/mainMargin"
+        android:layout_marginRight="@dimen/mainMargin"
+        android:background="#e5e5e5" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/calling_turn_box"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/lblCurrentTurn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="34"
+                android:textColor="@color/whiteColor"
+                android:textSize="100sp" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_marginTop="@dimen/mainMargin"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:weightSum="100">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="30">
+
+            <Button
+                android:id="@+id/btnPreviousTurn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/btn_previous_turn_drawable"
+                android:textColor="#8d8d8d"
+                android:text="نفر قبلی" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#c4c4c4"
+            android:layout_weight="0.1"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="40">
+
+            <Button
+                android:id="@+id/btnRetryCallingTurn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#e0e0e0"
+                android:textColor="#8d8d8d"
+                android:text="صدا زدن مجدد" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="#c4c4c4"
+            android:layout_weight="0.1"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="30">
+
+            <Button
+                android:id="@+id/btnNextTurn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/btn_next_turn_drawable"
+                android:textColor="#8d8d8d"
+                android:text="نفر بعدی" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:weightSum="100"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="40">
+
+            <TextView
+                android:id="@+id/lblInQueue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="34"
+                android:textColor="#8d8d8d"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="right|center_vertical"
+            android:layout_weight="60">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="تعداد نفرات در صف انتظار امروز:"
+                android:textColor="#8d8d8d"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:weightSum="100"
+        android:layout_marginTop="@dimen/mainMargin"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="40">
+
+            <TextView
+                android:id="@+id/lblTotalTurn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="34"
+                android:textColor="#8d8d8d"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="right|center_vertical"
+            android:layout_weight="60">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="تعداد کل نفرات:"
+                android:textColor="#8d8d8d"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

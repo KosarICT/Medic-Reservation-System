@@ -21,4 +21,6 @@ public class Constant {
     public static final String SHARE_COMMAND = "SHARE";
     public static final String WORLD_COMMAND = "WORLD";
     public static final String MY_HOSPITAL = "MY_HOSPITAL";
+    public static final String DASHBOARD_FRAGMENT = "DASHBOARD_FRAGMENT";
+    public static final String DOC_REQUEST_FRAGMENT = "DOC_REQUEST_FRAGMENT";
 }

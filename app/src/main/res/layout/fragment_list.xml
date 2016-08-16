@@ -85,6 +85,8 @@
             android:background="#e0e0e0" />
 
         <LinearLayout
+            android:id="@+id/llRequestPending"
+            android:clickable="true"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:gravity="center_vertical|right">
@@ -137,6 +139,8 @@
             android:background="#e0e0e0" />
 
         <LinearLayout
+            android:id="@+id/llCallingTurn"
+            android:clickable="true"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:gravity="center_vertical|right">

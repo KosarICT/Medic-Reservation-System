@@ -1,6 +1,7 @@
 package com.kosarict.mrs.fragment;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -11,12 +12,18 @@ import android.widget.Button;
 
 import com.kosarict.mrs.R;
 import com.kosarict.mrs.activity.DoctorDashboardActivity;
+import com.kosarict.mrs.tools.PublicMethods;
+import com.kosarict.mrs.view.DatePickerDialog;
+
+import java.util.Calendar;
 
 public class DocRequestFragment extends Fragment {
     private View layoutView;
     private FragmentActivity context;
     private static final String ARG_PARAM1 = "selectedHospitalName";
-    private String selectedHospitalName;
+    public static String selectedHospitalName;
+    private Button btnDocRequestFromDate;
+    private Button btnDocRequestToDate;
 
 
     public DocRequestFragment() {
@@ -55,13 +62,34 @@ public class DocRequestFragment extends Fragment {
     }
 
     private void initButton(){
+        btnDocRequestFromDate = (Button) layoutView.findViewById(R.id.btnDocRequestFromDate);
+        btnDocRequestToDate = (Button) layoutView.findViewById(R.id.btnDocRequestToDate);
         Button btnDocRequestSubmit = (Button) layoutView.findViewById(R.id.btnDocRequestSubmit);
         Button btnDocRequestCancel = (Button) layoutView.findViewById(R.id.btnDocRequestCancel);
+
+
+        btnDocRequestFromDate.setText(PublicMethods.getCurrentPersianDate());
+        btnDocRequestToDate.setText(PublicMethods.getCurrentPersianDate());
+
 
         btnDocRequestCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 setView(v.getId());
+            }
+        });
+
+        btnDocRequestFromDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDatePicker(v.getId());
+            }
+        });
+
+        btnDocRequestToDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDatePicker(v.getId());
             }
         });
     }
@@ -82,5 +110,33 @@ public class DocRequestFragment extends Fragment {
                     .replace(R.id.container, fragment, "doctorDashboardActivity")
                     .addToBackStack("doctorDashboardActivity").commit();
         }
+    }
+
+    private void showDatePicker(final int id){
+        Calendar calendar = Calendar.getInstance();
+
+        DatePickerDialog datePickerDialog = new DatePickerDialog(context, calendar, new DatePickerDialog.DatePickerListner() {
+            @Override
+            public void OnDoneButton(Dialog datedialog, String c) {
+                datedialog.dismiss();
+
+                switch (id){
+                    case R.id.btnDocRequestFromDate:
+                        btnDocRequestFromDate.setText(c);
+                        break;
+                    case R.id.btnDocRequestToDate:
+                        btnDocRequestToDate.setText(c);
+                        break;
+                }
+            }
+
+            @Override
+            public void OnCancelButton(Dialog datedialog) {
+                datedialog.dismiss();
+            }
+        });
+
+        datePickerDialog.setCanceledOnTouchOutside(false);
+        datePickerDialog.show();
     }
 }

@@ -30,7 +30,7 @@
                                     android:background="@mipmap/spinner_background"/>-->
 
                 <Button
-                    android:id="@+id/btnFromDate"
+                    android:id="@+id/btnDocRequestFromDate"
                     android:layout_width="match_parent"
                     android:layout_height="55dp"
                     android:background="@drawable/button_selector"
@@ -78,7 +78,7 @@
                                     android:background="@mipmap/spinner_background"></Spinner>-->
 
                 <Button
-                    android:id="@+id/btnToDate"
+                    android:id="@+id/btnDocRequestToDate"
                     android:layout_width="match_parent"
                     android:layout_height="55dp"
                     android:background="@drawable/button_selector"

@@ -23,8 +23,6 @@ public class DashboardFragment extends Fragment {
     private String selectedHospitalName;
 
 
-
-
     public DashboardFragment() {
     }
 
@@ -75,7 +73,7 @@ public class DashboardFragment extends Fragment {
         llViewRegisteredTurns.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context,"Hello",Toast.LENGTH_LONG).show();
+                Toast.makeText(context, R.string.empty_fragment, Toast.LENGTH_LONG).show();
             }
         });
 
@@ -83,7 +81,7 @@ public class DashboardFragment extends Fragment {
         llCanceledTurns.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context,"Hello",Toast.LENGTH_LONG).show();
+                Toast.makeText(context, R.string.empty_fragment, Toast.LENGTH_LONG).show();
             }
         });
 

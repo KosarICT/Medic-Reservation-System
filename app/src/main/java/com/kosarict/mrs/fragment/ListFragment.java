@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.kosarict.mrs.R;
 import com.kosarict.mrs.activity.DoctorDashboardActivity;
@@ -58,6 +59,8 @@ public class ListFragment extends Fragment {
     private void initLinearLayout() {
         LinearLayout llSubmitRequestForHospital = (LinearLayout) layoutView.findViewById(R.id.llSubmitRequestForHospital);
         LinearLayout llMyHospital = (LinearLayout) layoutView.findViewById(R.id.llMyHospital);
+        LinearLayout llCallingTurn = (LinearLayout) layoutView.findViewById(R.id.llCallingTurn);
+        LinearLayout llRequestPending = (LinearLayout) layoutView.findViewById(R.id.llRequestPending);
 
         llSubmitRequestForHospital.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,26 +75,53 @@ public class ListFragment extends Fragment {
                 setView(v.getId());
             }
         });
+
+        llCallingTurn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setView(v.getId());
+            }
+        });
+
+        llRequestPending.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setView(v.getId());
+            }
+        });
     }
 
     private void setView(int id) {
         Fragment fragment = context.getSupportFragmentManager().findFragmentById(R.id.container);
         context.getSupportFragmentManager().beginTransaction().remove(fragment).commit();
+        String command = "";
 
         switch (id) {
             case R.id.llSubmitRequestForHospital:
                 DoctorDashboardActivity.lblPageTitle.setText(R.string.register_fragment_title);
                 fragment = RegisterFragment.newInstance();
+                command = "RegisterFragment";
                 break;
             case R.id.llMyHospital:
                 DoctorDashboardActivity.lblPageTitle.setText(R.string.title_activity_doctor_dashboard);
                 fragment = MyHospitalFragment.newInstance();
+                command = "MyHospitalFragment";
+                break;
+            case R.id.llCallingTurn:
+                DoctorDashboardActivity.lblPageTitle.setText(R.string.calling_turn_fragment_title);
+                fragment = CallingTurnFragment.newInstance();
+                command = "CallingTurnFragment";
+                break;
+            case R.id.llRequestPending:
+                Toast.makeText(context, R.string.empty_fragment, Toast.LENGTH_LONG).show();
+                fragment = ListFragment.newInstance();
+                break;
         }
 
         if (fragment != null) {
             context.getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.container, fragment, "ListFragment")
-                    .addToBackStack("ListFragment").commit();
+                    .replace(R.id.container, fragment, command)
+                    .addToBackStack(command).commit();
         }
     }
 }

@@ -25,7 +25,7 @@
                 android:gravity="center_vertical">
 
                 <Button
-                    android:id="@+id/btnPationFromDate"
+                    android:id="@+id/btnPatientDate"
                     android:layout_width="match_parent"
                     android:layout_height="55dp"
                     android:background="@drawable/button_selector"
@@ -68,7 +68,7 @@
                 android:gravity="center_vertical">
 
                 <Button
-                    android:id="@+id/btnPationTime"
+                    android:id="@+id/btnPatientTime"
                     android:layout_width="match_parent"
                     android:layout_height="55dp"
                     android:background="@drawable/button_selector"
